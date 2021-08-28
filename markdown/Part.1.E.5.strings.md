@@ -29,10 +29,12 @@ ord('a')
 chr(122)
 
 ord('氅')  # 完了，汉字也有你不认识的吧？
-chr(25354) # 这个字估计你也不认识……
+chr(25344) # 这个字估计你也不认识……
 
 # ord('Python') # 这一句会报错
 ```
+
+
 
     97
     'z'
@@ -125,20 +127,22 @@ else:
     print('Have a nice drink!')
 ```
 
-    Please tell me your age:  19
-    
-    ---------------------------------------------------------------------------
-    
-    TypeError                                 Traceback (most recent call last)
-    
-    <ipython-input-9-0573fe379e83> in <module>
-          1 age = input('Please tell me your age: ')
-    ----> 2 if age < 18:
-          3     print('I can not sell you drinks...')
-          4 else:
-          5     print('Have a nice drink!')
-    
-    TypeError: '<' not supported between instances of 'str' and 'int'
+```python
+Please tell me your age:  19
+
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+<ipython-input-9-0573fe379e83> in <module>
+      1 age = input('Please tell me your age: ')
+----> 2 if age < 18:
+      3     print('I can not sell you drinks...')
+      4 else:
+      5     print('Have a nice drink!')
+
+TypeError: '<' not supported between instances of 'str' and 'int'
+```
 
 要改成这样才可能行：
 为什么是可能行而不是一定行？如果用户 `input` 键盘输入的是 `eighteen` 或者 ` 十八 ` 等，依然会导致 `int()` 失败并得到 `ValueError` 的报错。用户输入的不可控，可能会导致千奇百怪的报错。但在这里，我们先简化处理，在引导语中加入一个正确的示例并默认用户会按引导语正确输入。
